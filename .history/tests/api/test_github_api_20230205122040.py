@@ -19,7 +19,7 @@ def test_user_not_exists(github_api):
 def test_repo_can_be_found(github_api):
     r = github_api.search_repo('become-qa-auto')
     assert r['total_count'] == 26
-# https://api.github.com/search/repositories?q=become-qa-auto # perevirka v brauseri
+# https://api.github.com/search/repositories?q=become-qa-auto # perevirka v brouseri
     assert 'become-qa-auto' in r['items'][0]['name']
 
 
@@ -29,11 +29,10 @@ def test_repo_cannot_be_found(github_api):
     assert r['total_count'] == 0
 
 
-# @pytest.mark.api
-# def test_repo_with_single_char_be_found(github_api):
-#     r = github_api.search_repo('s')
-#     assert r['total_count'] != 0
-# # https://api.github.com/search/repositories?q=s # perevirka v brouseri
+@pytest.mark.api
+def test_repo_with_single_char_be_found(github_api):
+    r = github_api.search_repo('s')
+    assert r['total_count'] != 0
 
 
 """ from modules.api.clients.gihub import GitHub

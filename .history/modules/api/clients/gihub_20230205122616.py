@@ -8,7 +8,7 @@ class GitHub:
 
         return body
 
-# http zapros s parametrom v poiskovoj stroke #17.3
+
     def search_repo(self, name):
         r = requests.get(
             "https://api.github.com/search/repositories",
